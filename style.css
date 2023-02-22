@@ -97,9 +97,11 @@ html {
     border-bottom: 1px solid #303030;
     margin: 0 auto;
     width: 90%;
-    padding: 25px;
+   
   }
   .wrap .head-mobile ul a {
+    display:block;
+     padding: 25px;
     font-size: 14px;
     font-weight: bold;
     color: #aaa;
