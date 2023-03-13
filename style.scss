@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap");
+html {
+  font-family: "Noto Sans SC", sans-serif;
+}
+.column {
+  background: #fff;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding: 1%;
+  border-right: 1px solid #efefef;
+  .logo {
+    display: block;
+    background: url(https://i.postimg.cc/VkkZJ7Y9/logo.png) no-repeat 50% 0 /
+      contain;
+    width: 100%;
+    height: 30%;
+    text-indent: 101%; /*首行縮排*/
+    overflow: hidden;
+  }
+  .style {
+    text-align: center;
+    font-size: 14px;
+    .list {
+      margin: 75px 0 190px;
+      a {
+        display: block;
+        font-weight: bold;
+        color: #787878;
+        padding: 15px 0;
+        text-decoration: none;
+      }
+      :hover {
+        color: #3d3d3d;
+      }
+      :focus {
+        color: #8751a0;
+      }
+    }
+    .text {
+      color: #787878;
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .column {
+    display: none;
+  }
+}
+
+.wrap {
+  margin-left: 20%;
+  .head-mobile {
+    display: none;
+    label,
+    input {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    .head-mobile {
+      display: block;
+      z-index: 100;
+      padding: 3% 5% 3%;
+      border-bottom: 1px solid #efefef;
+      .logo {
+        display: block;
+        background: url(https://i.postimg.cc/VkkZJ7Y9/logo.png) #fff no-repeat 0 /
+          contain;
+        width: 85px;
+        height: 95px;
+        text-indent: 101%; /*首行縮排*/
+        overflow: hidden;
+        z-index: 100;
+      }
+      ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: 1s;
+        position: absolute;
+        z-index: 100;
+        top: 125px;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background: #232323;
+        li {
+          border-bottom: 1px solid #303030;
+          margin: 0 auto;
+          width: 90%;
+          padding: 25px;
+        }
+        a {
+          font-size: 14px;
+          font-weight: bold;
+          color: #aaa;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #fff;
+        }
+        a:focus {
+          color: #fff;
+        }
+      }
+      label {
+        display: block;
+        cursor: pointer;
+        height: 44px;
+        position: absolute;
+        z-index: 100;
+        right: 5%;
+        top: 5%;
+        .fa-bars {
+          font-size: 45px;
+          color: #8d8d8d;
+        }
+      }
+      input:checked ~ ul {
+        max-height: 500px;
+      }
+    }
+  }
+
+  .head {
+    padding: 4% 6%;
+    display: flex;
+    justify-content: space-between;
+    background: #fbfbfb;
+    h2 {
+      font-size: 24px;
+      color: #3f3f3f;
+    }
+    h3 {
+      font-size: 14px;
+      color: #8d8d8d;
+      a {
+        color: #8d8d8d;
+        text-decoration: none;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .head {
+      flex-direction: column;
+      align-items: center;
+      line-height: 40px;
+      padding: 2% 0;
+    }
+  }
+  .menu {
+    display: flex;
+    justify-content: center;
+    margin: 130px 0;
+    li {
+      border-bottom: 1px solid #efefef;
+      a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #8d8d8d;
+        font-size: 13px;
+        border-bottom: 4px solid transparent;
+        border-radius: 10%;
+      }
+      a:hover {
+        border-bottom: 4px solid #894f91;
+        border-radius: 10%;
+      }
+      a:focus {
+        border-bottom: 4px solid #894f91;
+        border-radius: 10%;
+      }
+    }
+  }
+  /*卡片*/
+  .row {
+    width: 90%;
+    margin: 0 auto;
+    .card {
+      border: none;
+      width: 75%;
+      .card-img-top {
+        /*畫面放大轉場*/
+        transform: scale(1, 1);
+        transition: all 0.5s ease-out;
+      }
+      .card-img-top:hover {
+        transform: scale(1.2, 1.2);
+      }
+      .overlay {
+        display: block; /*區塊大小*/
+        width: 100%;
+        height: 100%;
+        position: absolute; /*區塊位置*/
+        left: 0;
+        top: 0;
+        z-index: -1; /*放在圖片下*/
+        background: rgba(135, 81, 160, 0.8);
+        /*文字樣式*/
+        color: #fff;
+        padding: 20% 0;
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+        }
+        .hashtag {
+          display: flex;
+          justify-content: space-evenly;
+          padding: 0;
+          margin: 10% 0;
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+          }
+        }
+        .icon {
+          display: flex;
+          justify-content: space-evenly;
+          font-size: 22px;
+          a {
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+          }
+          a:hover {
+            background: #fff;
+            color: #000;
+          }
+        }
+      }
+  /*滑鼠移到img上，overlay就顯示，但是overlay顯示以後，滑鼠雖然看起來還在圖片的區域內， 但是滑鼠hover的元素已經變為出現的overlay，所以此時overlay就會回到display：none;，迴圈往複，就會不停閃動。
+所以新增一個樣式，滑鼠浮動到overlay，也要修改overlay的display樣式為block。*/     
+      .card-img-top:hover ~ .overlay,.overlay:hover {
+        z-index: 100;
+      }
+
+      .card-body {
+        text-align: left;
+        padding-left: 0;
+        a {
+          text-decoration: none;
+          color: #3f3f3f;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        .card-text {
+          color: #8d8d8d;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  /*頁碼*/
+  .pagination {
+    width: 140px;
+    padding: 5px;
+    margin: 12% auto;
+    background: #f2f2f2;
+    .page-link {
+      border: none;
+      background: #f2f2f2;
+      color: #8d8d8d;
+      font-size: 20px;
+    }
+    .page-link:hover {
+      color: #8752a0;
+    }
+    .page-link:focus {
+      background: #8752a0;
+      color: #fff;
+    }
+  }
+  .footer {
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+    padding: 25px 30px;
+  }
+  /*回到頂部*/
+  .top {
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    border: 1px solid #8d8d8d;
+    border-radius: 50%;
+    background: white;
+    display: none;
+    width: 60px;
+    height: 60px;
+    .fa-chevron-up {
+      line-height: 60px;
+      margin-left: 11px;
+      font-size: 40px;
+      color: #8d8d8d;
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .wrap {
+    margin: 0;
+    .card {
+      margin: 0 auto;
+    }
+  }
+}
